@@ -370,7 +370,17 @@ export default function ProjectCard({
                 .filter((item) => (data?.projectRequests[item] == false ? true : false))
                 .map((item) => (
                   <div key={item} style={{ display: "flex", alignItems: "center", gap: "1rem", paddingBlock: "0.2rem" }}>
-                    <Typography variant="subtitle2">{item}</Typography>
+                    <Typography
+                      variant="subtitle2"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => {
+                        if (showUserProfile) {
+                          setUserProfileName(item);
+                        }
+                      }}
+                    >
+                      {item}
+                    </Typography>
                     <Button variant="text" size="small" onClick={() => onApproveProjectRequest(item)}>
                       Approve
                     </Button>
