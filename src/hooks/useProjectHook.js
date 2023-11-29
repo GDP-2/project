@@ -226,7 +226,8 @@ export default function useProject() {
   const getDashboardData = async (year = new Date().getFullYear()) => {
     try {
       const respSummary = await getApi(`/blog/userDashboardSummary/${year}`);
-      const resp = await getApi(`/blog/dashboard/year/${year}/${username}`);
+      // const resp = await getApi(`/blog/dashboard/year/${year}/${username}`);
+      const resp = await getApi(`/blog/dashboard/year/${year}/${"all"}`);
       const respData = await getApi(`/blog/getapprovedAndUnApproved`);
       return {
         graphData: resp,

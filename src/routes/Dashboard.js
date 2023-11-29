@@ -147,11 +147,25 @@ export default function Dashboard() {
                 </CardContainer>
               </Grid>
             </Grid>
+          </Grid>          
+          <Grid item xs={12} sm={12} md={3}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <CardContainer style={{ display: "flex", flexDirection: "column", gap: "1rem", backgroundColor: "#b8e96c" }}>
+                <Typography variant="h6">Approved Projects</Typography>
+                <Typography variant="body1">{dashboardData?.data?.["approved count"]}</Typography>
+              </CardContainer>
+              <CardContainer style={{ display: "flex", flexDirection: "column", gap: "1rem", backgroundColor: "#ff8f8f" }}>
+                <Typography variant="h6">Pending Approval</Typography>
+                <Typography variant="body1">{dashboardData?.data?.["pending count"]}</Typography>
+              </CardContainer>
+            </div>
           </Grid>
-          {/* <Grid item xs={12} sm={12} md={9}>
-            <CardContainer ref={barContainerRef}>
+          {isAdmin ? (
+            <>
+             <Grid item xs={12} sm={12} md={12}>
+              <CardContainer ref={barContainerRef}>
               <div style={{ display: "flex", justifyContent: "space-between", paddingInline: "1rem" }}>
-                <Typography variant="h6">My Projects</Typography>
+                <Typography variant="h6">Projects Data</Typography>
                 <FormControl size="small">
                   <InputLabel>Year</InputLabel>
                   <Select
@@ -203,23 +217,8 @@ export default function Dashboard() {
                 />
               </div>
             </CardContainer>
-          </Grid> */}
-          <Grid item xs={12} sm={12} md={3}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              <CardContainer style={{ display: "flex", flexDirection: "column", gap: "1rem", backgroundColor: "#b8e96c" }}>
-                <Typography variant="h6">Approved Projects</Typography>
-                <Typography variant="body1">{dashboardData?.data?.["approved count"]}</Typography>
-              </CardContainer>
-              <CardContainer style={{ display: "flex", flexDirection: "column", gap: "1rem", backgroundColor: "#ff8f8f" }}>
-                <Typography variant="h6">Pending Approval</Typography>
-                <Typography variant="body1">{dashboardData?.data?.["pending count"]}</Typography>
-              </CardContainer>
-            </div>
           </Grid>
-          <Grid item xs={12} sm={12} md={9}></Grid>
-          {isAdmin ? (
-            <>
-              <Grid item xs={12} sm={12} md={12}>
+              {/* <Grid item xs={12} sm={12} md={12}>
                 <CardContainer ref={barContainerAdminRef}>
                   <div style={{ display: "flex", justifyContent: "space-between", paddingInline: "1rem", gap: "0.5rem" }}>
                     <Typography variant="h6">By Users</Typography>
@@ -285,7 +284,7 @@ export default function Dashboard() {
                     height={300}
                   />
                 </CardContainer>
-              </Grid>
+              </Grid> */}
               <Grid item xs={12} sm={12} md={12}>
                 <CardContainer className="piechart-container">
                   <div style={{ display: "flex", justifyContent: "space-between", paddingInline: "1rem", gap: "0.5rem" }}>
