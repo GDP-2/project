@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const isDev = false;
-const baseUrl = isDev ? "localhost:8080" : "https://gdp2-backend.onrender.com";
+const isDev = false; // true if we want to setup everythng locally(UI, Backend, DataBase) 
+const baseUrl = isDev ? "" : "https://gdp2-backend.onrender.com";
 
 // const baseUrl = "https://gdp2-backend.onrender.com";
 export const postApi = async (url, payload = {}, useToken = true) => {
